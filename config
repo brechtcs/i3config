@@ -1,0 +1,152 @@
+set $mod Mod1
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:Ubuntu Mono 10
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# kill focused window
+bindsym ctrl+BackSpace kill
+
+# start dmenu (a program launcher)
+bindsym $mod+p exec dmenu_run
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# split focused container vertically/horizontally
+bindsym $mod+v split vertical
+bindsym $mod+g split horizontal
+bindsym $mod+t split toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+a layout stacking
+bindsym $mod+z layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+shift+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+q focus parent
+
+# focus the child container
+bindsym $mod+s focus child
+
+# switch to workspace
+bindsym $mod+ampersand workspace 壹
+bindsym $mod+eacute workspace 贰
+bindsym $mod+quotedbl workspace 叁
+bindsym $mod+apostrophe workspace 肆
+bindsym $mod+parenleft workspace 伍
+
+# move focused container to workspace
+bindsym $mod+Shift+ampersand move container to workspace 壹
+bindsym $mod+Shift+eacute move container to workspace 贰
+bindsym $mod+Shift+quotedbl move container to workspace 叁
+bindsym $mod+Shift+apostrophe move container to workspace 肆
+bindsym $mod+Shift+5 move container to workspace 伍
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+    # These bindings trigger as soon as you enter the resize mode
+
+    # Pressing left will shrink the window’s width.
+    # Pressing right will grow the window’s width.
+    # Pressing up will shrink the window’s height.
+    # Pressing down will grow the window’s height.
+    bindsym h resize shrink width 5 px or 5 ppt
+    bindsym j resize grow height 5 px or 5 ppt
+    bindsym k resize shrink height 5 px or 5 ppt
+    bindsym l resize grow width 5 px or 5 ppt
+
+    # same bindings, but for the arrow keys
+    bindsym Left resize shrink width 5 px or 5 ppt
+    bindsym Down resize grow height 5 px or 5 ppt
+    bindsym Up resize shrink height 5 px or 5 ppt
+    bindsym Right resize grow width 5 px or 5 ppt
+
+    # also allow moving in resize mode 
+    bindsym $mod+Shift+h move left
+    bindsym $mod+Shift+j move down
+    bindsym $mod+Shift+k move up
+    bindsym $mod+Shift+l move right
+    bindsym $mod+Shift+Left move left
+    bindsym $mod+Shift+Down move down
+    bindsym $mod+Shift+Up move up
+    bindsym $mod+Shift+Right move right
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# set window colors     border  backgr  text    indic.  child_border
+client.focused          #5675b9 #5675b9 #ffffff #d42230 #000000
+client.focused_inactive #000000 #000000 #ffffff #5675b9 #000000
+client.unfocused        #000000 #000000 #888888 #5675b9 #000000
+client.urgent           #d42230 #d42230 #ffffff #393f4c #000000
+
+# i3bar options
+bar {
+    position top
+    status_command i3status -c $HOME/.config/i3/statusline
+    tray_output primary
+
+    colors {
+        background #000000
+        statusline #ffffff
+        separator #888888
+
+        focused_workspace #888888 #888888 #ffffff
+        active_workspace #000000 #000000 #ffffff
+        inactive_workspace #000000 #000000 #888888
+        urgent_workspace #d42230 #d42230 #ffffff
+    }
+}
+
+# application display settings
+for_window [class="[.]*"] floating enable, border normal 0
+for_window [class="Firefox"] floating disable, layout stacking
+for_window [class="Lxterminal"] floating disable
+
+floating_minimum_size 102 x 77 
+floating_maximum_size 1024 x 768
