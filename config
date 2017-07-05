@@ -120,10 +120,10 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # set window colors     border  backgr  text    indic.  child_border
-client.focused          #5675b9 #5675b9 #ffffff #d42230 #000000
-client.focused_inactive #000000 #000000 #ffffff #5675b9 #000000
-client.unfocused        #000000 #000000 #888888 #5675b9 #000000
-client.urgent           #d42230 #d42230 #ffffff #393f4c #000000
+client.focused          #87af5f #87af5f #ffffff #d75f5f #000000
+client.focused_inactive #000000 #000000 #ffffff #87af5f #000000
+client.unfocused        #000000 #000000 #6c6c6c #87af5f #000000
+client.urgent           #d75f5f #d75f5f #ffffff #393f4c #000000
 
 # i3bar options
 bar {
@@ -134,19 +134,25 @@ bar {
     colors {
         background #000000
         statusline #ffffff
-        separator #888888
+        separator #6c6c6c
 
-        focused_workspace #888888 #888888 #ffffff
+        focused_workspace #6c6c6c #6c6c6c #ffffff
         active_workspace #000000 #000000 #ffffff
-        inactive_workspace #000000 #000000 #888888
-        urgent_workspace #d42230 #d42230 #ffffff
+        inactive_workspace #000000 #000000 #6c6c6c
+        urgent_workspace #d75f5f #d75f5f #ffffff
     }
 }
 
-# application display settings
-for_window [class="[.]*"] floating enable, border normal 0
-for_window [class="Firefox"] floating disable, layout stacking
-for_window [class="Lxterminal"] floating disable
+# window display settings
+new_window normal 0
+
+for_window [class="Lxterminal"] border normal 0
 
 floating_minimum_size 102 x 77 
 floating_maximum_size 1024 x 768
+
+# restore main layout
+exec --no-startup-id "i3-msg 'workspace 壹; append_layout /home/me/.config/i3/workspaces/two-stacks.json'"
+exec --no-startup-id "evolution"
+exec --no-startup-id "firefox"
+exec --no-startup-id "lxterminal"
