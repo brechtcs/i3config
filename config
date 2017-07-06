@@ -82,6 +82,8 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# close all windows
+bindsym $mod+Shift+q [class="[.]*"] kill
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -127,6 +129,7 @@ client.urgent           #d75f5f #d75f5f #ffffff #393f4c #000000
 
 # i3bar options
 bar {
+    output eDP-1
     position top
     status_command i3status -c $HOME/.config/i3/statusline
     tray_output primary
@@ -146,6 +149,7 @@ bar {
 # window display settings
 new_window normal 0
 
+for_window [class="Gpick"] floating enable
 for_window [class="Lxterminal"] border normal 0
 
 floating_minimum_size 102 x 77 
@@ -153,6 +157,5 @@ floating_maximum_size 1024 x 768
 
 # restore main layout
 exec --no-startup-id "i3-msg 'workspace 壹; append_layout /home/me/.config/i3/workspaces/two-stacks.json'"
-exec --no-startup-id "evolution"
 exec --no-startup-id "firefox"
 exec --no-startup-id "lxterminal"

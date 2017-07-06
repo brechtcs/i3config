@@ -6,10 +6,7 @@
         "border": "none",
         "name": "main",
         "type": "con",
-        "swallows": [
-            {"class": "^Evolution$"},
-            {"class": "^Firefox$"}
-        ]
+        "swallows": [{"class": "^Firefox$"}]
     }]
 }
 
@@ -21,9 +18,7 @@
         "border": "none",
         "name": "side",
         "type": "con",
-        "swallows": [
-            {"class": "^Lxterminal$"}
-        ]
+        "swallows": [{"class": "^Lxterminal$"}]
 
     }]
 }
