@@ -147,10 +147,9 @@ bar {
 }
 
 # window display settings
-new_window normal 0
-
+for_window [window_type="normal"] border normal 0
 for_window [class="Gpick"] floating enable
-for_window [class="Lxterminal"] border normal 0
+for_window [class="Lxtask"] floating enable
 
 floating_minimum_size 102 x 77 
 floating_maximum_size 1024 x 768
