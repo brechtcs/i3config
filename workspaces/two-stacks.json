@@ -6,7 +6,7 @@
         "border": "none",
         "name": "main",
         "type": "con",
-        "swallows": [{"class": "^Firefox$"}]
+        "swallows": [{"class": "^Gpodder$"}]
     }]
 }
 

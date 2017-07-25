@@ -156,5 +156,5 @@ floating_maximum_size 1024 x 768
 
 # restore main layout
 exec --no-startup-id "i3-msg 'workspace 壹; append_layout /home/me/.config/i3/workspaces/two-stacks.json'"
-exec --no-startup-id "firefox"
+exec --no-startup-id "gpodder"
 exec --no-startup-id "lxterminal"
