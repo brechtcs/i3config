@@ -119,6 +119,14 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# window display settings
+for_window [window_type="normal"] border normal 0
+for_window [class="Gpick"] floating enable
+for_window [class="Lxtask"] floating enable
+
+floating_minimum_size 102 x 77 
+floating_maximum_size 1024 x 768
+
 # set window colors     border  backgr  text    indic.  child_border
 client.focused          #87af5f #87af5f #ffffff #d75f5f #000000
 client.focused_inactive #000000 #000000 #ffffff #87af5f #000000
@@ -144,13 +152,8 @@ bar {
     }
 }
 
-# window display settings
-for_window [window_type="normal"] border normal 0
-for_window [class="Gpick"] floating enable
-for_window [class="Lxtask"] floating enable
-
-floating_minimum_size 102 x 77 
-floating_maximum_size 1024 x 768
+# set screen brightness
+exec --no-startup-id "xrandr --output eDP-1 --brightness .62"
 
 # restore main layout
 exec --no-startup-id "i3-msg 'workspace 壹; append_layout /home/me/.config/i3/workspaces/two-stacks.json'"
