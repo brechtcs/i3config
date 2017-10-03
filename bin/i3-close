@@ -1,3 +1,7 @@
 #!/bin/sh
 
-i3-msg '[class="[.]*"] kill'
+WINDOWS=$(wmctrl -l | cut -f1 -d' ')
+
+for i in $WINDOWS; do
+    wmctrl -ic "$i"
+done
