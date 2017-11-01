@@ -119,6 +119,7 @@ bindsym $mod+r mode "resize"
 
 # window display settings
 for_window [window_type="normal"] border normal 0
+for_window [class="Ulauncher"] border none
 for_window [class="Gpick"] floating enable
 for_window [class="Lxtask"] floating enable
 
@@ -157,3 +158,4 @@ exec --no-startup-id "xrandr --output eDP-1 --brightness .62"
 exec --no-startup-id "i3-msg 'workspace 壹; append_layout /home/me/.config/i3/workspaces/two-stacks.json'"
 exec --no-startup-id "nautilus"
 exec --no-startup-id "lxterminal"
+exec --no-startup-id "ulauncher --hide-window"
