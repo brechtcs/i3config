@@ -11,7 +11,7 @@ floating_modifier $mod
 bindsym ctrl+BackSpace kill
 
 # start dmenu (a program launcher)
-bindsym $mod+p exec dmenu_run
+bindsym $mod+p exec "cat ~/.config/i3/dmenu | dmenu -l 3 | sh"
 
 # change focus
 bindsym $mod+h focus left
