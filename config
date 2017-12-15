@@ -89,16 +89,16 @@ mode "resize" {
     # Pressing right will grow the window’s width.
     # Pressing up will shrink the window’s height.
     # Pressing down will grow the window’s height.
-    bindsym h resize shrink width 5 px or 5 ppt
-    bindsym j resize grow height 5 px or 5 ppt
-    bindsym k resize shrink height 5 px or 5 ppt
-    bindsym l resize grow width 5 px or 5 ppt
+    bindsym h resize shrink width 6 px or 6 ppt
+    bindsym j resize grow height 6 px or 6 ppt
+    bindsym k resize shrink height 6 px or 6 ppt
+    bindsym l resize grow width 6 px or 6 ppt
 
     # same bindings, but for the arrow keys
-    bindsym Left resize shrink width 5 px or 5 ppt
-    bindsym Down resize grow height 5 px or 5 ppt
-    bindsym Up resize shrink height 5 px or 5 ppt
-    bindsym Right resize grow width 5 px or 5 ppt
+    bindsym Left resize shrink width 6 px or 6 ppt
+    bindsym Down resize grow height 6 px or 6 ppt
+    bindsym Up resize shrink height 6 px or 6 ppt
+    bindsym Right resize grow width 6 px or 6 ppt
 
     # also allow moving in resize mode 
     bindsym $mod+Shift+h move left
@@ -127,35 +127,7 @@ floating_minimum_size 102 x 77
 floating_maximum_size 1024 x 768
 
 # set window colors     border  backgr  text    indic.  child_border
-client.focused          #87af5f #87af5f #ffffff #d75f5f #000000
-client.focused_inactive #000000 #000000 #ffffff #87af5f #000000
-client.unfocused        #000000 #000000 #6c6c6c #87af5f #000000
-client.urgent           #d75f5f #d75f5f #ffffff #393f4c #000000
-
-# i3bar options
-bar {
-    output eDP-1
-    position top
-    status_command i3status -c $HOME/.config/i3/statusline
-    tray_output primary
-
-    colors {
-        background #000000
-        statusline #ffffff
-        separator #6c6c6c
-
-        focused_workspace #6c6c6c #6c6c6c #ffffff
-        active_workspace #000000 #000000 #ffffff
-        inactive_workspace #000000 #000000 #6c6c6c
-        urgent_workspace #d75f5f #d75f5f #ffffff
-    }
-}
-
-# set screen brightness
-exec --no-startup-id "xrandr --output eDP-1 --brightness .62"
-
-# restore main layout
-exec --no-startup-id "i3-msg 'workspace 壹; append_layout /home/me/.config/i3/workspaces/two-stacks.json'"
-exec --no-startup-id "nautilus"
-exec --no-startup-id "lxterminal"
-exec --no-startup-id "ulauncher --hide-window"
+client.focused          #87af5f #87af5f #ffffff #d75f5f #242424
+client.focused_inactive #242424 #242424 #ffffff #87af5f #242424
+client.unfocused        #242424 #242424 #6c6c6c #87af5f #242424
+client.urgent           #d75f5f #d75f5f #ffffff #393f4c #242424
