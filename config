@@ -8,9 +8,10 @@ font pango:Ubuntu Mono 10
 floating_modifier $mod
 
 # kill focused window
-bindsym ctrl+BackSpace kill
+bindsym $mod+BackSpace kill
 
-# start dmenu (a program launcher)
+# program launching keys
+bindsym $mod+dollar exec "x-terminal-emulator"
 bindsym $mod+p exec "cat ~/.config/i3/dmenu | dmenu -l 3 | sh"
 
 # change focus
