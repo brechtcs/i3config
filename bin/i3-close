@@ -1,7 +1,0 @@
-#!/bin/sh
-
-WINDOWS=$(wmctrl -l | cut -f1 -d' ')
-
-for i in $WINDOWS; do
-    wmctrl -ic "$i"
-done
