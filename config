@@ -18,17 +18,17 @@ bindsym Mod4+j exec "xdotool click --clearmodifiers 5"
 bindsym Mod4+k exec "xdotool click --clearmodifiers 4"
 bindsym Mod4+l exec "xdotool key Right"
 
-# change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+# change focus (incl. mouse position follow)
+bindsym $mod+h exec "~/.config/i3/follow.sh focus left"
+bindsym $mod+j exec "~/.config/i3/follow.sh focus down"
+bindsym $mod+k exec "~/.config/i3/follow.sh focus up"
+bindsym $mod+l exec "~/.config/i3/follow.sh focus right"
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $mod+Left exec "~/.config/i3/follow.sh focus left"
+bindsym $mod+Down exec "~/.config/i3/follow.sh focus down"
+bindsym $mod+Up exec "~/.config/i3/follow.sh focus up"
+bindsym $mod+Right exec "~/.config/i3/follow.sh focus right"
 
 # move focused window
 bindsym $mod+Shift+h move left
