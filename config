@@ -12,6 +12,12 @@ bindsym $mod+BackSpace kill
 bindsym $mod+p exec "cat ~/.config/i3/dmenu | dmenu -l 3 | sh"
 bindsym $mod+dollar exec "x-terminal-emulator"
 
+# Universal scrolling key for all applications
+bindsym Mod4+h exec "xdotool key Left"
+bindsym Mod4+j exec "xdotool click --clearmodifiers 5"
+bindsym Mod4+k exec "xdotool click --clearmodifiers 4"
+bindsym Mod4+l exec "xdotool key Right"
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
