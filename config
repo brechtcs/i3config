@@ -1,4 +1,4 @@
-set $mod Mod1
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -9,14 +9,8 @@ floating_modifier $mod
 
 # launching and closing windows
 bindsym $mod+BackSpace kill
-bindsym $mod+p exec "cat ~/.config/i3/dmenu | dmenu -l 3 | sh"
+bindsym $mod+Return exec "xfce4-popup-whiskermenu"
 bindsym $mod+dollar exec "x-terminal-emulator"
-
-# Universal scrolling key for all applications
-bindsym Mod4+h exec "xdotool key Left"
-bindsym Mod4+j exec "xdotool click --clearmodifiers 5"
-bindsym Mod4+k exec "xdotool click --clearmodifiers 4"
-bindsym Mod4+l exec "xdotool key Right"
 
 # change focus (incl. mouse position follow)
 bindsym $mod+h exec "~/.config/i3/follow.sh focus left"
