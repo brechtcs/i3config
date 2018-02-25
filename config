@@ -10,7 +10,7 @@ floating_modifier $mod
 # launching and closing windows
 bindsym $mod+BackSpace kill
 bindsym $mod+Return exec "xfce4-popup-whiskermenu"
-bindsym $mod+dollar exec "x-terminal-emulator"
+bindsym $mod+dollar exec "urxvt"
 
 # change focus (incl. mouse position follow)
 bindsym $mod+h exec "~/.config/i3/follow.sh focus left"
@@ -94,18 +94,23 @@ bindsym $mod+Shift+r restart
 
 # window display settings
 for_window [window_type="normal"] border normal 0
-for_window [class="Ulauncher"] border none
 for_window [class="Gpick"] floating enable
-for_window [class="Xfce4-terminal"] floating enable
 
 floating_minimum_size 102 x 77 
 floating_maximum_size 1024 x 768
 
+# get colors from Xresources
+set_from_resource $bg color0 #000000
+set_from_resource $fg color7 #ffffff
+set_from_resource $dark color10 #586e75
+set_from_resource $blue color4 #00aade
+set_from_resource $red color1 #d75f5f
+
 # set window colors     border  backgr  text    indic.  child_border
-client.focused          #87af5f #87af5f #ffffff #d75f5f #242424
-client.focused_inactive #242424 #242424 #ffffff #87af5f #242424
-client.unfocused        #242424 #242424 #6c6c6c #87af5f #242424
-client.urgent           #d75f5f #d75f5f #ffffff #393f4c #242424
+client.focused          $blue   $blue   $fg     $red    $bg
+client.focused_inactive $bg     $bg     $fg     $blue   $bg
+client.unfocused        $bg     $bg     $dark   $blue   $bg
+client.urgent           $red    $red    $fg     $dark   $bg
 
 # start with stacking layout
 exec --no-startup-id i3-msg 'layout stacking'
