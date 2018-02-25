@@ -100,7 +100,7 @@ floating_minimum_size 102 x 77
 floating_maximum_size 1024 x 768
 
 # get colors from Xresources
-set_from_resource $bg color0 #000000
+set_from_resource $bg color8 #000000
 set_from_resource $fg color7 #ffffff
 set_from_resource $dark color10 #586e75
 set_from_resource $blue color4 #00aade
