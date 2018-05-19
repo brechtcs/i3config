@@ -95,6 +95,8 @@ bindsym $mod+Shift+r restart
 # window display settings
 for_window [window_type="normal"] border normal 0
 for_window [class="Gpick"] floating enable
+for_window [class="Xfdesktop"] floating disable
+for_window [class="Xfdesktop"] border pixel 1
 
 floating_minimum_size 102 x 77 
 floating_maximum_size 1024 x 768
@@ -113,4 +115,4 @@ client.unfocused        $bg     $bg     $dark   $blue   $bg
 client.urgent           $red    $red    $fg     $dark   $bg
 
 # start with stacking layout
-exec --no-startup-id i3-msg 'layout stacking'
+workspace_layout stacking
