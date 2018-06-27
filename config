@@ -37,10 +37,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # window resize bindings
-bindsym $mod+Control+h resize shrink width 6 px or 6 ppt
-bindsym $mod+Control+j resize grow height 6 px or 6 ppt
-bindsym $mod+Control+k resize shrink height 6 px or 6 ppt
-bindsym $mod+Control+l resize grow width 6 px or 6 ppt
+bindsym $mod+Control+n resize grow height 6 px or 6 ppt
+bindsym $mod+Control+p resize shrink height 6 px or 6 ppt
+bindsym $mod+Control+j resize grow width 6 px or 6 ppt
+bindsym $mod+Control+k resize shrink width 6 px or 6 ppt
 
 # same bindings, but for the arrow keys
 bindsym $mod+Control+Left resize shrink width 6 px or 6 ppt
